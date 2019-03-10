@@ -27,7 +27,7 @@ def search():
 def n6status():
     target_servers = [410, 411, 412, 425, 426, 427, 440, 441, 442]
     all_responses = ServerInfo.return_server_info(target_servers)
-    return render_template('pages/n6status.html')
+    return render_template('pages/n6status.html', servers=all_responses)
 
 
 def get_server_by_id(serverid):
