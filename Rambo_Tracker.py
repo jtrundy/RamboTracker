@@ -123,10 +123,10 @@ class ServerInfo:
             response = requests.get("https://atlas.hgn.hu/api/server/" + str(arg))
             print_response_data(response)
 
-    def return_server_info(*argv):
+    def return_server_info(servers):
         return_list = list()
-        for arg in argv:
-            response = requests.get("https://atlas.hgn.hu/api/server/" + str(arg))
+        for server in servers:
+            response = requests.get("https://atlas.hgn.hu/api/server/" + str(server))
             return_list.append(return_response_data(response))
         return return_list
 
