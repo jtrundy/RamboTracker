@@ -2,19 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="/static/css/rambostyle.css"/>
     <title>N6 Region</title>
 </head>
 <body>
-
-{{ servers }}
-
-<table>
-    <thead>
-        <tr>id</tr>
-        <tr>name</tr>
-        <tr>player count</tr>
-    </thead>
-    {% for server in servers %}
+<h1>N6 Regional Status</h1>
+<div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+        <th>Server ID</th>
+        <th>Server Name</th>
+        <th>Current Player Count</th>
+        <th>Online</th>
+        </tr>
+        </thead>
+        <table>
+</div>
+<div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+        {% for server in servers %}
         <tr>
             <td>
                 <h1>{{ server.id }}</h1>
@@ -25,9 +32,14 @@
             <td>
                 <h1>{{ server.player_count }}</h1>
             </td>
+            <td>
+                <h1>{{ server.online }}</h1>
+            </td>
         </tr>
-    {% endfor %}
-</table>
-
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</section>
 </body>
 </html>
