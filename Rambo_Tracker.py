@@ -25,6 +25,8 @@ def search():
 
 @app.route('/n6status', methods=['GET'])
 def n6status():
+    target_servers = [410, 411, 412, 425, 426, 427, 440, 441, 442]
+    all_responses = ServerInfo.return_server_info(target_servers)
     return render_template('pages/n6status.html')
 
 
@@ -102,6 +104,13 @@ def print_response_data(response):
         for key, value in processed_data.items():
             print(key, " - ", value)
 
+
+def return_response_data(response):
+    response_text = response.text
+    processed_data = json.loads(response_text)
+    return processed_data
+
+
 class SearchForm(Form):
     steamname = TextField('Search a Steam ID', [DataRequired()])
 
@@ -114,6 +123,13 @@ class ServerInfo:
             response = requests.get("https://atlas.hgn.hu/api/server/" + str(arg))
             print_response_data(response)
 
+    def return_server_info(*argv):
+        return_list = list()
+        for arg in argv:
+            response = requests.get("https://atlas.hgn.hu/api/server/" + str(arg))
+            return_list.append(return_response_data(response))
+        return return_list
+
 class PlayerInfo:
     """ This function takes data from the Atlas API and sorts it in a list by playtime (descending) for all players in
     all 9 regions"""
@@ -123,7 +139,8 @@ class PlayerInfo:
             response = requests.get("https://atlas.hgn.hu/api/server/" + str(arg) + "/players")
             print_response_data(response)
 
-#using this as a demonstration to open a file - should be changed to a static string value for GitHub Repo
+
+# using this as a demonstration to open a file - should be changed to a static string value for GitHub Repo
 # f = open("C:/Users/Fury/PycharmProjects/Rambo_Tracker/secrets/secrets.txt", "r")
 # lines = f.readlines()
 # app.secret_key = lines[0]
