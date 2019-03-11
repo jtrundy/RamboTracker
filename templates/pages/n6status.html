@@ -10,36 +10,42 @@
 <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
         <thead>
-        <th>Server ID</th>
-        <th>Server Name</th>
-        <th>Current Player Count</th>
-        <th>Online</th>
-        </tr>
+            <th>
+                <h1>Server ID</h1>
+            </th>
+            <th>
+                <h1>Server Name</h1>
+            </th>
+            <th>
+                <h1>Current Player Count</h1>
+            </th>
+            <th>
+                <h1>Online</h1>
+            </th>
         </thead>
-        <table>
+    </table>
 </div>
-<div class="tbl-content">
+<div>
     <table cellpadding="0" cellspacing="0" border="0">
         <tbody>
         {% for server in servers %}
-        <tr>
-            <td>
-                <h1>{{ server.id }}</h1>
-            </td>
-            <td>
-                <h1>{{ server.name }}</h1>
-            </td>
-            <td>
-                <h1>{{ server.player_count }}</h1>
-            </td>
-            <td>
-                <h1>{{ server.online }}</h1>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <h1>{{ server.id }}</h1>
+                </td>
+                <td>
+                    <h1>{{ server.name }}</h1>
+                </td>
+                <td>
+                    <h1>{{ server.player_count }}</h1>
+                </td>
+                <td>
+                    <h1>{{ server.online }}</h1>
+                </td>
+            </tr>
         {% endfor %}
         </tbody>
     </table>
 </div>
-</section>
 </body>
 </html>
