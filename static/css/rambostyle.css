@@ -170,6 +170,7 @@ input[type="text"] {
     top: 20px;
     left: 60px;
 }
+
 h1 {
     font-size: 30px;
     color: #fff;
@@ -217,7 +218,7 @@ td {
 
 /* demo styles */
 
-body {
+.status {
     background: -webkit-linear-gradient(left, #25c481, #25b7c4);
     background: linear-gradient(to right, #25c481, #25b7c4);
     font-family: 'Roboto', sans-serif;
@@ -226,38 +227,6 @@ body {
 section {
     margin: 50px;
 }
-
-
-/* follow me template */
-.made-with-love {
-    margin-top: 40px;
-    padding: 10px;
-    clear: left;
-    text-align: center;
-    font-size: 10px;
-    font-family: arial;
-    color: #fff;
-}
-
-.made-with-love i {
-    font-style: normal;
-    color: #F50057;
-    font-size: 14px;
-    position: relative;
-    top: 2px;
-}
-
-.made-with-love a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.made-with-love a:hover {
-    text-decoration: underline;
-}
-
-
-/* for custom scrollbar for webkit browser*/
 
 ::-webkit-scrollbar {
     width: 6px;

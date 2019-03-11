@@ -5,23 +5,37 @@
     <link type="text/css" rel="stylesheet" href="/static/css/rambostyle.css"/>
     <title>N6 Region</title>
 </head>
-<body>
+<body class="status">
+<div class="custom-select" style="width:200px">
+    <select>
+        <option value="M5">410 is M5</option>
+        <option value="M6">411 is M6</option>
+        <option value="M7">412 is M7</option>
+        <option value="N5">425 is N5</option>
+        <option value="N6">426 is N6</option>
+        <option value="N7">427 is N7</option>
+        <option value="O5">440 is O5</option>
+        <option value="O6">441 is O6</option>
+        <option value="O7">442 is O7</option>
+    </select>
+</div>
 <h1>N6 Regional Status</h1>
+
 <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
         <thead>
-            <th>
-                <h1>Server ID</h1>
-            </th>
-            <th>
-                <h1>Server Name</h1>
-            </th>
-            <th>
-                <h1>Current Player Count</h1>
-            </th>
-            <th>
-                <h1>Online</h1>
-            </th>
+        <th>
+            <h1>Server ID</h1>
+        </th>
+        <th>
+            <h1>Server Name</h1>
+        </th>
+        <th>
+            <h1>Current Player Count</h1>
+        </th>
+        <th>
+            <h1>Online</h1>
+        </th>
         </thead>
     </table>
 </div>
@@ -29,20 +43,20 @@
     <table cellpadding="0" cellspacing="0" border="0">
         <tbody>
         {% for server in servers %}
-            <tr>
-                <td>
-                    <h1>{{ server.id }}</h1>
-                </td>
-                <td>
-                    <h1>{{ server.name }}</h1>
-                </td>
-                <td>
-                    <h1>{{ server.player_count }}</h1>
-                </td>
-                <td>
-                    <h1>{{ server.online }}</h1>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <h1>{{ server.id }}</h1>
+            </td>
+            <td>
+                <h1>{{ server.name }}</h1>
+            </td>
+            <td>
+                <h1>{{ server.player_count }}</h1>
+            </td>
+            <td>
+                <h1>{{ server.online }}</h1>
+            </td>
+        </tr>
         {% endfor %}
         </tbody>
     </table>
